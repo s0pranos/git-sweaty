@@ -40,6 +40,20 @@ class BootstrapWindowsWrapperTests(unittest.TestCase):
         self.assertIn("$args.Count -gt 0", wrapper)
         self.assertIn('$SetupArgs = @($MyInvocation.UnboundArguments | ForEach-Object { [string]$_ })', wrapper)
 
+    def test_windows_wrapper_handles_missing_assume_yes_env_without_null_method_call(self) -> None:
+        wrapper = self._read_wrapper()
+
+        self.assertIn("if (-not [string]::IsNullOrWhiteSpace($env:GIT_SWEATY_BOOTSTRAP_ASSUME_YES)) {", wrapper)
+        self.assertIn("$env:GIT_SWEATY_BOOTSTRAP_ASSUME_YES.Trim().ToLowerInvariant()", wrapper)
+        self.assertNotIn('($env:GIT_SWEATY_BOOTSTRAP_ASSUME_YES | ForEach-Object { $_.Trim().ToLowerInvariant() })', wrapper)
+
+    def test_windows_wrapper_falls_back_to_generic_top_level_error_message(self) -> None:
+        wrapper = self._read_wrapper()
+
+        self.assertIn('$message = if ($null -ne $_ -and $null -ne $_.Exception', wrapper)
+        self.assertIn('Write-Error $message', wrapper)
+        self.assertIn('"Setup failed."', wrapper)
+
     def test_windows_wrapper_uses_zip_download_and_not_unix_bootstrap(self) -> None:
         wrapper = self._read_wrapper()
 

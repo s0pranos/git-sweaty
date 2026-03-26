@@ -39,7 +39,10 @@ function Read-YesNo {
         [string]$Default = "Y"
     )
 
-    $assumeYes = ($env:GIT_SWEATY_BOOTSTRAP_ASSUME_YES | ForEach-Object { $_.Trim().ToLowerInvariant() })
+    $assumeYes = $null
+    if (-not [string]::IsNullOrWhiteSpace($env:GIT_SWEATY_BOOTSTRAP_ASSUME_YES)) {
+        $assumeYes = $env:GIT_SWEATY_BOOTSTRAP_ASSUME_YES.Trim().ToLowerInvariant()
+    }
     if ($assumeYes -in @("1", "true", "yes", "y")) {
         return $true
     }
@@ -654,6 +657,11 @@ try {
     $status = Invoke-OnlineSetup -GhPath $ghPath -PythonRuntime $pythonRuntime -UpstreamRepo $UpstreamRepo -TargetRepo $targetRepo -Args $SetupArgs
     exit $status
 } catch {
-    Write-Error $_.Exception.Message
+    $message = if ($null -ne $_ -and $null -ne $_.Exception -and -not [string]::IsNullOrWhiteSpace($_.Exception.Message)) {
+        $_.Exception.Message
+    } else {
+        "Setup failed."
+    }
+    Write-Error $message
     exit 1
 }
