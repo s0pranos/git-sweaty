@@ -4414,13 +4414,20 @@ function applyDebugPayloadOverrides(payload) {
   const debugYear = Number(debugYearRaw);
   if (!Number.isInteger(debugYear) || debugYear < 1900 || debugYear > 2100) return;
 
-  if (!Array.isArray(payload.types)) payload.types = [];
-  if (!Array.isArray(payload.years)) payload.years = [];
-  if (!Array.isArray(payload.activities)) payload.activities = [];
+if (!Array.isArray(payload.types)) payload.types = [];
+
+// 🏁 Race'i sistem type listesine ekle
+if (!payload.types.includes("Race")) {
+  payload.types.push("Race");
+}
+
+if (!Array.isArray(payload.years)) payload.years = [];
+if (!Array.isArray(payload.activities)) payload.activities = [];
 
 // 🏁 Race detection
 payload.activities.forEach((activity) => {
-  if (activity.name && activity.name.includes("🏁")) {
+  const name = String(activity.name || "");
+  if (name.includes("🏁")) {
     activity.type = "Race";
   }
 });
