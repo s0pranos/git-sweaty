@@ -12,6 +12,7 @@ const TYPE_LABEL_OVERRIDES = {
 };
 let TYPE_META = {};
 let OTHER_BUCKET = "OtherSports";
+let raceOnly = false;
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -4700,6 +4701,11 @@ async function init() {
     if (areAllTypesSelected()) return;
     selectedTypes = new Set(payload.types.filter((type) => selectedTypes.has(type)));
   }
+
+  function toggleRace() {
+  raceOnly = !raceOnly;
+  update();
+}
 
   function finalizeYearSelection() {
     if (!areAllYearsSelected() && selectedYears.size === currentVisibleYears.length) {
