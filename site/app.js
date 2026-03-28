@@ -4416,11 +4416,6 @@ function applyDebugPayloadOverrides(payload) {
 
 if (!Array.isArray(payload.types)) payload.types = [];
 
-// 🏁 Race'i sistem type listesine ekle
-if (!payload.types.includes("Race")) {
-  payload.types.push("Race");
-}
-
 if (!Array.isArray(payload.years)) payload.years = [];
 if (!Array.isArray(payload.activities)) payload.activities = [];
 
