@@ -3701,9 +3701,15 @@ function getFilteredActivities(payload, types, years) {
   if (!activities.length) return [];
   const yearSet = new Set(years.map(Number));
   const typeSet = new Set(types);
-  return activities.filter((activity) => (
-    typeSet.has(activity.type) && yearSet.has(Number(activity.year))
-  ));
+  return activities.filter((activity) => {
+  const isRace = activity.name && activity.name.includes("🏁");
+  const effectiveType = isRace ? "Race" : activity.type;
+
+  return (
+    typeSet.has(effectiveType) &&
+    yearSet.has(Number(activity.year))
+  );
+});
 }
 
 function getTypeYearTotals(payload, type, years) {
