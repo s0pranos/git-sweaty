@@ -4498,10 +4498,15 @@ async function init() {
     }
   });
 
-  const typeOptions = [
-    { value: "all", label: "All Activities" },
-    ...payload.types.map((type) => ({ value: type, label: displayType(type) })),
-  ];
+  const allTypes = [...payload.types, "Race"];
+
+const typeOptions = [
+  { value: "all", label: "All Activities" },
+  ...allTypes.map((type) => ({
+    value: type,
+    label: type === "Race" ? "🏁 Race" : displayType(type)
+  })),
+];
 
   typeOptions.push({
   value: "Race",
