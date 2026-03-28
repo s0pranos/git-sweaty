@@ -5143,6 +5143,13 @@ async function init() {
       update({ keepYearMenuOpen: open, menuOnly: true, resetYearMenuScroll: open });
     });
   }
+  if (raceToggleBtn) {
+  raceToggleBtn.addEventListener("click", () => {
+    raceOnly = !raceOnly;
+    raceToggleBtn.classList.toggle("active", raceOnly);
+    update();
+  });
+}
   if (typeClearButton) {
     typeClearButton.addEventListener("click", () => {
       const narrowLayout = isNarrowLayoutViewport();
