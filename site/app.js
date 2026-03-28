@@ -51,6 +51,7 @@ const heatmaps = document.getElementById("heatmaps");
 const tooltip = document.getElementById("tooltip");
 const summary = document.getElementById("summary");
 const headerMeta = document.getElementById("headerMeta");
+const raceToggleBtn = document.getElementById("raceToggle");
 const headerLinks = document.querySelector(".header-links");
 const repoLink = document.querySelector(".repo-link");
 const stravaProfileLink = document.querySelector(".strava-profile-link");
