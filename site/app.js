@@ -4417,6 +4417,13 @@ function applyDebugPayloadOverrides(payload) {
   if (!Array.isArray(payload.types)) payload.types = [];
   if (!Array.isArray(payload.years)) payload.years = [];
   if (!Array.isArray(payload.activities)) payload.activities = [];
+
+// 🏁 Race detection
+payload.activities.forEach((activity) => {
+  if (activity.name && activity.name.includes("🏁")) {
+    activity.type = "Race";
+  }
+});
   if (!payload.aggregates || typeof payload.aggregates !== "object") payload.aggregates = {};
 
   const fallbackType = "Run";
