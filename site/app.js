@@ -12,7 +12,6 @@ const TYPE_LABEL_OVERRIDES = {
 };
 let TYPE_META = {};
 let OTHER_BUCKET = "OtherSports";
-let raceOnly = false;
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -51,7 +50,6 @@ const heatmaps = document.getElementById("heatmaps");
 const tooltip = document.getElementById("tooltip");
 const summary = document.getElementById("summary");
 const headerMeta = document.getElementById("headerMeta");
-const raceToggleBtn = document.getElementById("raceToggle");
 const headerLinks = document.querySelector(".header-links");
 const repoLink = document.querySelector(".repo-link");
 const stravaProfileLink = document.querySelector(".strava-profile-link");
@@ -3699,19 +3697,13 @@ function combineYearAggregates(yearData, types) {
 }
 
 function getFilteredActivities(payload, types, years) {
-  return activities.filter((activity) => {
-  const matchType = typeSet.has(activity.type);
-  const matchYear = yearSet.has(Number(activity.year));
-
-  if (!matchType || !matchYear) return false;
-
-  if (raceOnly) {
-    const name = String(activity.name || "");
-    return name.includes("🏁");
-  }
-
-  return true;
-});
+  const activities = payload.activities || [];
+  if (!activities.length) return [];
+  const yearSet = new Set(years.map(Number));
+  const typeSet = new Set(types);
+  return activities.filter((activity) => (
+    typeSet.has(activity.type) && yearSet.has(Number(activity.year))
+  ));
 }
 
 function getTypeYearTotals(payload, type, years) {
@@ -4709,11 +4701,6 @@ async function init() {
     selectedTypes = new Set(payload.types.filter((type) => selectedTypes.has(type)));
   }
 
-  function toggleRace() {
-  raceOnly = !raceOnly;
-  update();
-}
-
   function finalizeYearSelection() {
     if (!areAllYearsSelected() && selectedYears.size === currentVisibleYears.length) {
       allYearsMode = true;
@@ -5119,9 +5106,6 @@ async function init() {
     toggleType(value);
     update();
   });
-  if (raceToggleBtn && typeButtons) {
-  typeButtons.appendChild(raceToggleBtn);
-}
   if (typeMenuButton) {
     typeMenuButton.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -5152,13 +5136,6 @@ async function init() {
       update({ keepYearMenuOpen: open, menuOnly: true, resetYearMenuScroll: open });
     });
   }
-  if (raceToggleBtn) {
-  raceToggleBtn.addEventListener("click", () => {
-    raceOnly = !raceOnly;
-    raceToggleBtn.classList.toggle("active", raceOnly);
-    update();
-  });
-}
   if (typeClearButton) {
     typeClearButton.addEventListener("click", () => {
       const narrowLayout = isNarrowLayoutViewport();
