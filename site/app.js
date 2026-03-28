@@ -5119,6 +5119,9 @@ async function init() {
     toggleType(value);
     update();
   });
+  if (raceToggleBtn && typeButtons) {
+  typeButtons.appendChild(raceToggleBtn);
+}
   if (typeMenuButton) {
     typeMenuButton.addEventListener("click", (event) => {
       event.stopPropagation();
