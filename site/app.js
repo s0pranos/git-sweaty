@@ -4652,15 +4652,21 @@ async function init() {
   }
 
   function toggleType(value) {
-    const nextState = reduceTopButtonSelection({
-      rawValue: value,
-      allMode: allTypesMode,
-      selectedValues: selectedTypes,
-      allValues: payload.types,
-    });
-    allTypesMode = nextState.allMode;
-    selectedTypes = nextState.selectedValues;
-  }
+  // 🏁 Race'i manuel olarak kabul et
+  const allValues = payload.types.includes("Race")
+    ? payload.types
+    : [...payload.types, "Race"];
+
+  const nextState = reduceTopButtonSelection({
+    rawValue: value,
+    allMode: allTypesMode,
+    selectedValues: selectedTypes,
+    allValues: allValues,
+  });
+
+  allTypesMode = nextState.allMode;
+  selectedTypes = nextState.selectedValues;
+}
 
   function toggleTypeMenu(value) {
     const selection = draftTypeMenuSelection || cloneSelectionState(allTypesMode, selectedTypes);
