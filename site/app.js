@@ -3701,15 +3701,9 @@ function getFilteredActivities(payload, types, years) {
   if (!activities.length) return [];
   const yearSet = new Set(years.map(Number));
   const typeSet = new Set(types);
-  return activities.filter((activity) => {
-  const isRace = activity.name && activity.name.includes("🏁");
-  const effectiveType = isRace ? "Race" : activity.type;
-
-  return (
-    typeSet.has(effectiveType) &&
-    yearSet.has(Number(activity.year))
-  );
-});
+  return activities.filter((activity) => (
+    typeSet.has(activity.type) && yearSet.has(Number(activity.year))
+  ));
 }
 
 function getTypeYearTotals(payload, type, years) {
@@ -4414,18 +4408,9 @@ function applyDebugPayloadOverrides(payload) {
   const debugYear = Number(debugYearRaw);
   if (!Number.isInteger(debugYear) || debugYear < 1900 || debugYear > 2100) return;
 
-if (!Array.isArray(payload.types)) payload.types = [];
-
-if (!Array.isArray(payload.years)) payload.years = [];
-if (!Array.isArray(payload.activities)) payload.activities = [];
-
-// 🏁 Race detection
-payload.activities.forEach((activity) => {
-  const name = String(activity.name || "");
-  if (name.includes("🏁")) {
-    activity.type = "Race";
-  }
-});
+  if (!Array.isArray(payload.types)) payload.types = [];
+  if (!Array.isArray(payload.years)) payload.years = [];
+  if (!Array.isArray(payload.activities)) payload.activities = [];
   if (!payload.aggregates || typeof payload.aggregates !== "object") payload.aggregates = {};
 
   const fallbackType = "Run";
@@ -4498,21 +4483,10 @@ async function init() {
     }
   });
 
-  const allTypes = [...payload.types, "Race"];
-
-const typeOptions = [
-  { value: "all", label: "All Activities" },
-  ...allTypes.map((type) => ({
-    value: type,
-    label: type === "Race" ? "🏁 Race" : displayType(type)
-  })),
-];
-
-  typeOptions.push({
-  value: "Race",
-  label: "🏁 Race"
-});
-  
+  const typeOptions = [
+    { value: "all", label: "All Activities" },
+    ...payload.types.map((type) => ({ value: type, label: displayType(type) })),
+  ];
   const setupUnits = normalizeUnits(payload.units || DEFAULT_UNITS);
   const setupWeekStart = normalizeWeekStart(payload.week_start || payload.weekStart);
 
@@ -4643,14 +4617,11 @@ const typeOptions = [
   }
 
   function selectedTypesList() {
-  const allTypes = [...payload.types, "Race"];
-
-  if (areAllTypesSelected()) {
-    return allTypes;
+    if (areAllTypesSelected()) {
+      return payload.types.slice();
+    }
+    return payload.types.filter((type) => selectedTypes.has(type));
   }
-
-  return allTypes.filter((type) => selectedTypes.has(type));
-}
 
   function selectedYearsList(visibleYears) {
     if (areAllYearsSelected()) {
@@ -4660,21 +4631,15 @@ const typeOptions = [
   }
 
   function toggleType(value) {
-  // 🏁 Race'i manuel olarak kabul et
-  const allValues = payload.types.includes("Race")
-    ? payload.types
-    : [...payload.types, "Race"];
-
-  const nextState = reduceTopButtonSelection({
-    rawValue: value,
-    allMode: allTypesMode,
-    selectedValues: selectedTypes,
-    allValues: allValues,
-  });
-
-  allTypesMode = nextState.allMode;
-  selectedTypes = nextState.selectedValues;
-}
+    const nextState = reduceTopButtonSelection({
+      rawValue: value,
+      allMode: allTypesMode,
+      selectedValues: selectedTypes,
+      allValues: payload.types,
+    });
+    allTypesMode = nextState.allMode;
+    selectedTypes = nextState.selectedValues;
+  }
 
   function toggleTypeMenu(value) {
     const selection = draftTypeMenuSelection || cloneSelectionState(allTypesMode, selectedTypes);
