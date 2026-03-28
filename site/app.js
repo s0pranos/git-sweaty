@@ -4643,11 +4643,14 @@ const typeOptions = [
   }
 
   function selectedTypesList() {
-    if (areAllTypesSelected()) {
-      return payload.types.slice();
-    }
-    return payload.types.filter((type) => selectedTypes.has(type));
+  const allTypes = [...payload.types, "Race"];
+
+  if (areAllTypesSelected()) {
+    return allTypes;
   }
+
+  return allTypes.filter((type) => selectedTypes.has(type));
+}
 
   function selectedYearsList(visibleYears) {
     if (areAllYearsSelected()) {
