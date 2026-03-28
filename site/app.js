@@ -3699,13 +3699,19 @@ function combineYearAggregates(yearData, types) {
 }
 
 function getFilteredActivities(payload, types, years) {
-  const activities = payload.activities || [];
-  if (!activities.length) return [];
-  const yearSet = new Set(years.map(Number));
-  const typeSet = new Set(types);
-  return activities.filter((activity) => (
-    typeSet.has(activity.type) && yearSet.has(Number(activity.year))
-  ));
+  return activities.filter((activity) => {
+  const matchType = typeSet.has(activity.type);
+  const matchYear = yearSet.has(Number(activity.year));
+
+  if (!matchType || !matchYear) return false;
+
+  if (raceOnly) {
+    const name = String(activity.name || "");
+    return name.includes("🏁");
+  }
+
+  return true;
+});
 }
 
 function getTypeYearTotals(payload, type, years) {
