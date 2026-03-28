@@ -4487,6 +4487,12 @@ async function init() {
     { value: "all", label: "All Activities" },
     ...payload.types.map((type) => ({ value: type, label: displayType(type) })),
   ];
+
+  typeOptions.push({
+  value: "Race",
+  label: "🏁 Race"
+});
+  
   const setupUnits = normalizeUnits(payload.units || DEFAULT_UNITS);
   const setupWeekStart = normalizeWeekStart(payload.week_start || payload.weekStart);
 
