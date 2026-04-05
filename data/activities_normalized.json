@@ -10112,5 +10112,18 @@
     "start_date_local": "2026-04-04T09:53:01Z",
     "type": "TrailRun",
     "year": 2026
+  },
+  {
+    "date": "2026-04-05",
+    "distance": 10063.4,
+    "elevation_gain": 77.0,
+    "id": "17983676648",
+    "moving_time": 3966.0,
+    "name": "AA Ko\u015fusu",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-05T10:03:02Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
