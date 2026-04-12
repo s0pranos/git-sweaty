@@ -10125,5 +10125,18 @@
     "start_date_local": "2026-04-05T10:03:02Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-04-10",
+    "distance": 168502.0,
+    "elevation_gain": 4961.0,
+    "id": "18070859159",
+    "moving_time": 104009.0,
+    "name": "\u0130znik Ultra Trail 165k \ud83c\udfc1",
+    "raw_activity_type": "Run",
+    "raw_type": "TrailRun",
+    "start_date_local": "2026-04-10T17:01:01Z",
+    "type": "TrailRun",
+    "year": 2026
   }
 ]
