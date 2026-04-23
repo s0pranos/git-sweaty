@@ -10177,5 +10177,18 @@
     "start_date_local": "2026-04-21T18:37:51Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-04-23",
+    "distance": 12103.6,
+    "elevation_gain": 356.0,
+    "id": "18226169390",
+    "moving_time": 5216.0,
+    "name": "23 Nisan Ko\u015fusu \ud83c\uddf9\ud83c\uddf7",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-23T15:06:43Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
