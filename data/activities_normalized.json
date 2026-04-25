@@ -10190,5 +10190,18 @@
     "start_date_local": "2026-04-23T15:06:43Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-04-25",
+    "distance": 15016.8,
+    "elevation_gain": 308.0,
+    "id": "18248339559",
+    "moving_time": 6706.0,
+    "name": "Eymir 15K",
+    "raw_activity_type": "Run",
+    "raw_type": "TrailRun",
+    "start_date_local": "2026-04-25T09:54:37Z",
+    "type": "TrailRun",
+    "year": 2026
   }
 ]
