@@ -10275,11 +10275,24 @@
     "elevation_gain": 2670.0,
     "id": "18436323304",
     "moving_time": 19903.0,
-    "name": "Tahtal\u0131 Run to Sky",
+    "name": "Tahtal\u0131 Run to Sky \ud83c\udfc1",
     "raw_activity_type": "Run",
     "raw_type": "TrailRun",
     "start_date_local": "2026-05-09T07:01:05Z",
     "type": "TrailRun",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-12",
+    "distance": 8799.3,
+    "elevation_gain": 35.0,
+    "id": "18479306703",
+    "moving_time": 3326.0,
+    "name": "Evening Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-12T18:38:26Z",
+    "type": "Run",
     "year": 2026
   }
 ]
