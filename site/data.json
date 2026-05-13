@@ -5543,6 +5543,13 @@
       "subtype": "Run",
       "type": "Run",
       "year": 2026
+    },
+    {
+      "date": "2026-05-13",
+      "hour": 18,
+      "subtype": "Run",
+      "type": "Run",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -12338,6 +12345,15 @@
           "distance": 8799.3,
           "elevation_gain": 35.0,
           "moving_time": 3326.0
+        },
+        "2026-05-13": {
+          "activity_ids": [
+            "18492806539"
+          ],
+          "count": 1,
+          "distance": 8694.0,
+          "elevation_gain": 151.0,
+          "moving_time": 3464.0
         }
       },
       "TrailRun": {
@@ -12497,7 +12513,7 @@
       }
     }
   },
-  "generated_at": "2026-05-12T17:09:32.882680+00:00",
+  "generated_at": "2026-05-13T17:14:58.637619+00:00",
   "other_bucket": "OtherSports",
   "profile_url": "https://www.strava.com/athletes/34528404",
   "repo": "s0pranos/git-sweaty",
