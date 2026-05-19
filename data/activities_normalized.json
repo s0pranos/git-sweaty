@@ -10333,5 +10333,31 @@
     "start_date_local": "2026-05-18T18:36:01Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-05-19",
+    "distance": 4157.7,
+    "elevation_gain": 97.0,
+    "id": "18565440782",
+    "moving_time": 1857.0,
+    "name": "Hacettepe Trail",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-19T09:56:29Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-19",
+    "distance": 5590.3,
+    "elevation_gain": 89.0,
+    "id": "18565447015",
+    "moving_time": 1753.0,
+    "name": "Hacettepe 19 May\u0131s Ko\u015fusu \ud83c\uddf9\ud83c\uddf7",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-19T11:18:28Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
