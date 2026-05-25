@@ -10385,5 +10385,18 @@
     "start_date_local": "2026-05-23T09:07:21Z",
     "type": "TrailRun",
     "year": 2026
+  },
+  {
+    "date": "2026-05-25",
+    "distance": 8002.9,
+    "elevation_gain": 12.0,
+    "id": "18643867146",
+    "moving_time": 3108.0,
+    "name": "Bulancak Sahil",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-25T08:54:35Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
