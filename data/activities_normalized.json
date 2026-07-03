@@ -10541,5 +10541,18 @@
     "start_date_local": "2026-06-29T08:04:36Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-07-02",
+    "distance": 56046.0,
+    "elevation_gain": 3210.0,
+    "id": "19154340595",
+    "moving_time": 38962.0,
+    "name": "Val d'aran by UTMB 55K PDA",
+    "raw_activity_type": "Run",
+    "raw_type": "TrailRun",
+    "start_date_local": "2026-07-02T07:30:31Z",
+    "type": "TrailRun",
+    "year": 2026
   }
 ]
