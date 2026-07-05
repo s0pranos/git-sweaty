@@ -10554,5 +10554,18 @@
     "start_date_local": "2026-07-02T07:30:31Z",
     "type": "TrailRun",
     "year": 2026
+  },
+  {
+    "date": "2026-07-04",
+    "distance": 3574.3,
+    "elevation_gain": 80.0,
+    "id": "19179237628",
+    "moving_time": 3440.0,
+    "name": "Tour de France '26",
+    "raw_activity_type": "Walk",
+    "raw_type": "Walk",
+    "start_date_local": "2026-07-04T17:22:01Z",
+    "type": "Walk",
+    "year": 2026
   }
 ]
