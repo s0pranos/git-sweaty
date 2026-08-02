@@ -10723,5 +10723,18 @@
     "start_date_local": "2026-07-30T18:29:44Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-08-02",
+    "distance": 52914.6,
+    "elevation_gain": 1278.0,
+    "id": "19570523919",
+    "moving_time": 24726.0,
+    "name": "Gauja Trail by UTMB 50K \ud83c\uddf1\ud83c\uddfb",
+    "raw_activity_type": "Run",
+    "raw_type": "TrailRun",
+    "start_date_local": "2026-08-02T08:30:47Z",
+    "type": "TrailRun",
+    "year": 2026
   }
 ]
