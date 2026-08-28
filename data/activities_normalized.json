@@ -10840,5 +10840,18 @@
     "start_date_local": "2026-08-25T18:47:13Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-08-26",
+    "distance": 6806.2,
+    "elevation_gain": 30.0,
+    "id": "19912378210",
+    "moving_time": 2403.0,
+    "name": "Ak\u015fam Ko\u015fu",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-08-26T18:32:16Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
