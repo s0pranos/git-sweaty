@@ -10853,5 +10853,18 @@
     "start_date_local": "2026-08-26T18:32:16Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-08-30",
+    "distance": 17765.9,
+    "elevation_gain": 472.0,
+    "id": "19959068666",
+    "moving_time": 8216.0,
+    "name": "Sabah Patika Ko\u015fusu",
+    "raw_activity_type": "Run",
+    "raw_type": "TrailRun",
+    "start_date_local": "2026-08-30T08:29:50Z",
+    "type": "TrailRun",
+    "year": 2026
   }
 ]
