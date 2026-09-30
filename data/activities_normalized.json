@@ -10957,5 +10957,18 @@
     "start_date_local": "2026-09-28T17:51:39Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-09-30",
+    "distance": 10791.5,
+    "elevation_gain": 315.0,
+    "id": "20395684378",
+    "moving_time": 5343.0,
+    "name": "Rivelin Valley Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-09-30T15:42:39Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
