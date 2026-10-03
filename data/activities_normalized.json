@@ -10970,5 +10970,31 @@
     "start_date_local": "2026-09-30T15:42:39Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-10-03",
+    "distance": 4130.8,
+    "elevation_gain": 23.0,
+    "id": "20428750945",
+    "moving_time": 1578.0,
+    "name": "Morning Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-10-03T08:20:04Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-10-03",
+    "distance": 5029.8,
+    "elevation_gain": 59.0,
+    "id": "20429129420",
+    "moving_time": 1435.0,
+    "name": "Hillsborough Parkrun \ud83c\udf33",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-10-03T09:01:22Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
