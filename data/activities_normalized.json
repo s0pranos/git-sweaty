@@ -10996,5 +10996,18 @@
     "start_date_local": "2026-10-03T09:01:22Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-10-04",
+    "distance": 22962.0,
+    "elevation_gain": 459.0,
+    "id": "20449688260",
+    "moving_time": 9863.0,
+    "name": "\u00d6\u011fle Aras\u0131 Patika Ko\u015fusu",
+    "raw_activity_type": "Run",
+    "raw_type": "TrailRun",
+    "start_date_local": "2026-10-04T12:15:40Z",
+    "type": "TrailRun",
+    "year": 2026
   }
 ]
