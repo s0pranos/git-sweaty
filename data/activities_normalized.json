@@ -11100,5 +11100,18 @@
     "start_date_local": "2026-10-14T17:35:25Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-10-15",
+    "distance": 22680.9,
+    "elevation_gain": 397.0,
+    "id": "20593614024",
+    "moving_time": 5441.0,
+    "name": "Sabah S\u00fcr\u00fc\u015f",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-10-15T09:31:47Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]
