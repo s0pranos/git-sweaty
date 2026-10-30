@@ -11243,5 +11243,18 @@
     "start_date_local": "2026-10-29T13:20:11Z",
     "type": "TrailRun",
     "year": 2026
+  },
+  {
+    "date": "2026-10-30",
+    "distance": 36621.9,
+    "elevation_gain": 724.0,
+    "id": "20792141040",
+    "moving_time": 7785.0,
+    "name": "\u00d6\u011fle Aras\u0131 S\u00fcr\u00fc\u015f",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-10-30T12:07:47Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]
