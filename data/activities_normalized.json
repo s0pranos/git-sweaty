@@ -11295,5 +11295,18 @@
     "start_date_local": "2026-11-03T14:12:12Z",
     "type": "TrailRun",
     "year": 2026
+  },
+  {
+    "date": "2026-11-05",
+    "distance": 22705.4,
+    "elevation_gain": 362.0,
+    "id": "20870838481",
+    "moving_time": 4720.0,
+    "name": "\u00d6\u011fleden Sonra S\u00fcr\u00fc\u015f",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-11-05T13:01:00Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]
