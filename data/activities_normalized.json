@@ -11308,5 +11308,18 @@
     "start_date_local": "2026-11-05T13:01:00Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-11-06",
+    "distance": 9022.3,
+    "elevation_gain": 167.0,
+    "id": "20884762483",
+    "moving_time": 3995.0,
+    "name": "\u00d6\u011fleden Sonra Ko\u015fu",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-11-06T15:18:03Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
